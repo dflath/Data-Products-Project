@@ -28,12 +28,12 @@ shinyServer(function(input, output) {
         # only include outliers if requested
         output$wageBoxplot <- renderPlot({
                 p <- ggplot(data = cps, aes_string(x = input$category , y = "Wage", fill = input$category)) + geom_boxplot() 
-                p <- p  + labs(y = "Wage (dollars per hour)")  + coord_flip()
+                p <- p  + labs(y = "Wage (dollars per hour)", title = "Box and Whisker Plot")  + coord_flip()
                 print(p)
         })
         
-        output$wageScatterplot <- renderPlot({
-                p2 <- ggplot(data = cps,  aes_string(x = "Wage", col = input$category)) + geom_density() + labs(x= "Wage (dollars per hour)")
+        output$wageDensityplot <- renderPlot({
+                p2 <- ggplot(data = cps,  aes_string(x = "Wage", col = input$category)) + geom_density() + labs(x= "Wage (dollars per hour)", title = "Density Plot")
                 print(p2)
         })
         

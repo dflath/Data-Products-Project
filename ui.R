@@ -31,7 +31,7 @@ shinyUI(fluidPage(
                 
                 mainPanel(
                         h3(textOutput(outputId = "caption")),
-                        plotOutput(outputId = "wageScatterplot"), 
+                        plotOutput(outputId = "wageDensityplot"), 
                         plotOutput(outputId = "wageBoxplot") 
                         
                 )
